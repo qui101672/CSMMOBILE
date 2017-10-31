@@ -5,14 +5,23 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>SaleReport</ion-title>
+    <ion-title>Doanh thu</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <ion-row class="header-col">
+    <ion-col>Ngày</ion-col>
+    <ion-col>Thời gian</ion-col>
+    <ion-col>Số tiền</ion-col>
+    <ion-col>Ghi chú</ion-col>
+  </ion-row>
 
+  <ion-row *ngFor="let sale of sales">
+    <ion-col>{{sale.voucherDate}}</ion-col>
+    <ion-col>{{sale.voucherTime}}</ion-col>
+    <ion-col>{{sale.amount | currency:'VND':true}}</ion-col>
+    <ion-col>{{sale.note}}</ion-col>
+  </ion-row>
 </ion-content>
